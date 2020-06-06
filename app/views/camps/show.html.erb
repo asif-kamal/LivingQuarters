@@ -1,0 +1,19 @@
+<h2><%= @camp.name %></h2>
+<br>
+<div class="subtext">
+<h3><%= @camp.location %></h3>
+<%= @camp.description %>
+</div>
+<br>
+<br>
+<strong><em>Camp Counselors already signed up:</em></strong>
+<br>
+<% @camp.camp_counselors.uniq.each do |counselor| %>
+  <%= counselor.name %>
+  <br>
+<% end %>
+<br>
+<br>
+<p style="text-align:center;">
+  <%= link_to "View #{@camp.name} Activities", camp_activities_path(@camp) %>
+</p>

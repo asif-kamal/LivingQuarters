@@ -1,0 +1,42 @@
+<h3 style="text-align:center; font-weight:400;"><%= @activity.camp.name %></h3>
+<h2><%= @activity.name %></h2>
+
+<div style="text-align:center">
+  <%= activity_edit_link %>
+</div>
+<br>
+<br>
+<h3><%= @activity.description %></h3>
+<p>
+  Fun Rating: <%= @activity.assignments.average(:rating) %>
+  <br>
+</p>
+Availability:
+<br>
+<%= render partial: 'activity_availability', locals: {assignments: @assignments} %>
+<br>
+<br>
+Counselors that are signed up for this activity:
+<br>
+<% @activity.camp_counselors.uniq.each do |counselor| %>
+  <em><%= counselor.name %></em>
+  <br>
+<% end %>
+<br>
+<br>
+<br>
+<%= render partial: 'activity_comments', locals: {activity: @activity, comments: @comments} %>
+<br>
+<br>
+<br>
+Share your comments about <%= @activity.name %>:
+<br>
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+<br>
+<div id="form">
+  <%= render :partial => 'comments/form', locals: {activity: @activity} %>
+</div>
+<br>
+<br>

@@ -1,0 +1,16 @@
+<%= form_for activity do |f| %>
+  <br>
+  <br>
+  <em>
+  <%= f.label :description, "Description:" %>
+  </em>
+  <br>
+  <%= f.text_area :description %>
+  <br>
+  <br>
+  <%= f.submit "Update Activity" %>
+<% end %>
+<br>
+<%= form_for :activity, url: activity_path, method: :delete, data: {confirm: "Are You Sure You Want to Delete This Activity?"} do |f| %>
+<%= f.submit "Delete Activity" %>
+<% end %>

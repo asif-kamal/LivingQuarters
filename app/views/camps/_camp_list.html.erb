@@ -1,0 +1,14 @@
+<% camps.each do |camp| %>
+  <h3 style="font-weight:500;"><%= camp.location %></h3>
+    <p>
+    <strong>
+      <%= link_to camp.name, camp_path(camp) %>
+    </strong>
+    <br>
+    <br>
+    <%= camp.description %>
+    <br>
+    <br>
+    <br>
+    </p>
+<% end %>

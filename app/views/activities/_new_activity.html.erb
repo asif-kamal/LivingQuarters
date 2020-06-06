@@ -1,0 +1,17 @@
+<%= form_for activity do |f| %>
+  <%= f.label :name, "Activity Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <% if @camp %>
+    <%= f.hidden_field :camp_id, value: @camp.id %>
+  <% else %>
+    <%= f.label :camp_id, "Camp name:" %><br>
+    <%= f.collection_select :camp_id, Camp.all, :id, :name, :include_blank => "Please select" %>
+    <br>
+  <% end %>
+  <%= f.label :description, "Description" %>
+  <br>
+  <%= f.text_area :description, size: "50x10" %>
+  <br>
+  <%= f.submit "Create Activity" %>
+<% end %>

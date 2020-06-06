@@ -1,0 +1,19 @@
+<p style="text-align:center;"><%= link_to "Add New Activity", new_activity_path %>
+</p>
+<br>
+<% activities.each do |activity| %>
+    <p>
+      <%= link_to "#{activity.name}", activity_path(activity) %>
+      <br>
+      <br>
+      <%= activity.description %>
+      <br>
+      <span style="font-size:14px;">Fun Rating: <%= activity.assignments.average(:rating) %></span>
+      <br>
+      <br>
+      <em><%= link_to "#{activity.camp.name}", camp_path(activity.camp) %></em>
+      <br>
+      <br>
+    </p>
+  <br>
+<% end %>
