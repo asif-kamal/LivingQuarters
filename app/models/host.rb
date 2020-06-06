@@ -6,6 +6,10 @@ class Host < ApplicationRecord
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  has_many :assignments
+  has_many :attractions, through: :assignments
+
+  has_many :locations, through: :assignments
 
   has_many :attractions, through: :locations
 
@@ -13,7 +17,7 @@ class Host < ApplicationRecord
 
 
   # look into this improvement suggestion from Jennifer (Jenn) Hansen during my rails project assessment:
-  
+
   # maybe source: :activities
 
 
