@@ -238,6 +238,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   loofah (>= 2.2.3)
+  nokogiri (~> 1.10.5)
   omniauth
   omniauth-facebook
   puma (~> 3.12)
@@ -258,4 +259,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

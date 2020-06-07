@@ -7,7 +7,7 @@ class AssignmentsController < ApplicationController
   end
 
   def show
-    @activity = @assignment.activity
+    @attraction = @assignment.attraction
   end
 
   def new
@@ -30,9 +30,9 @@ class AssignmentsController < ApplicationController
   def update
     if params[:assignment]==nil
       flash[:notice] = "Invalid Entry - Please Try Again"
-      redirect_to camp_counselor_assignments_path(current_user)
+      redirect_to host_assignments_path(current_user)
     elsif @assignment.update(assignment_params)
-      redirect_to camp_counselor_assignments_path(current_user)
+      redirect_to host_assignments_path(current_user)
     end
   end
 
@@ -51,18 +51,18 @@ class AssignmentsController < ApplicationController
 
 
   def assignment_params
-    params.require(:assignment).permit(:name, :filled, :rating, :camp_counselor_id, :activity_id, :camp_id)
+    params.require(:assignment).permit(:name, :filled, :rating, :host_id, :attraction_id, :location_id)
   end
 
 
   def set_index_variables
-    if params[:camp_counselor_id]
-      @counselor = CampCounselor.find_by(id: params[:camp_counselor_id])
-      @assignments = @counselor.assignments
+    if params[:host_id]
+      @host = Host.find_by(id: params[:host_id])
+      @assignments = @host.assignments
     else
       @assignments = Assignment.all
     end
-    @camps = Camp.all
+    @location = Location.all
   end
 
 end

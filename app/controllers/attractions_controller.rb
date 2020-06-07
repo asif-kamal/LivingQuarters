@@ -12,8 +12,8 @@ class AttractionsController < ApplicationController
   end
 
   def show
-
-    @experience_reports = @attractions.comments
+    @assignments = @attractions.assignments.order_by_filled
+    @experience_reports = @attractions.experience_reports
   end
 
   def new
@@ -54,9 +54,16 @@ class AttractionsController < ApplicationController
 
   def create_logic
     @attraction = Attraction.create(activity_params)
-
-      redirect_to activity_path(@activity)
-    
+    if @attraction.save
+      2.times do
+        @attraction.assignments.create(:attraction_id => @attraction.id, :location_id => @attraction.location_id, :filled => false, :rating => 0)
+      end
+      redirect_to attraction_path(@attraction)
+    else
+      render :new
+    end
   end
 
-end
+      redirect_to attraction_path(@attraction)
+
+  end

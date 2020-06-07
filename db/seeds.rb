@@ -89,31 +89,36 @@ def make_attractions
   DATA[:attractions].each do |attraction|
     new_attraction = Attraction.new
     attraction.each_with_index do |attribute, i|
-      attraction.send(DATA[:activity_keys][i]+"=", attribute)
+      new_attraction.send(DATA[:activity_keys][i]+"=", attribute)
     end
-    attraction.save
+    if new_attraction.save
+      2.times do
+        new_attraction.assignments.create(:attraction_id => new_attraction.id, :location_id => new_attraction.location_id, :filled => false, :rating => 0)
       end
     end
-
-
-
-def make_camps
-  DATA[:camps].each do |camp|
-    new_camp = Camp.new
-    camp.each_with_index do |attribute, i|
-      new_camp.send(DATA[:camp_keys][i]+"=", attribute)
-    end
-    new_camp.save
   end
 end
 
-def make_comments
-  DATA[:comments].each do |comment|
-    new_comment = Comment.new
-    comment.each_with_index do |attribute, i|
-      new_comment.send(DATA[:comment_keys][i]+"=", attribute)
+
+
+
+def make_locations
+  DATA[:locations].each do |location|
+    new_location = Location.new
+    location.each_with_index do |attribute, i|
+      new_location.send(DATA[:location_keys][i]+"=", attribute)
     end
-    new_comment.save
+    new_location.save
+  end
+end
+
+def make_experience_reports
+  DATA[:experience_reports].each do |experience_report|
+    new_experience_report = ExperienceReport.new
+    experience_report.each_with_index do |attribute, i|
+    new_experience_report.send(DATA[:new_experience_report_keys][i]+"=", attribute)
+    end
+    new_experience_report.save
   end
 end
 

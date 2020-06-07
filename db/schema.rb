@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_163634) do
+ActiveRecord::Schema.define(version: 2020_06_06_232204) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "name"
+    t.integer "rating"
+    t.boolean "filled", default: false
+    t.integer "host_id"
+    t.integer "attraction_id"
+    t.integer "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attraction_id"], name: "index_assignments_on_attraction_id"
+    t.index ["host_id"], name: "index_assignments_on_host_id"
+    t.index ["location_id"], name: "index_assignments_on_location_id"
+  end
 
   create_table "attractions", force: :cascade do |t|
     t.string "name"
