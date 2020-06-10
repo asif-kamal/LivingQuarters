@@ -1,0 +1,8 @@
+<h2>Update <%= @attraction.name %> Attraction</h2>
+<br>
+
+<%= render partial: 'layouts/flash_notice', locals: {object: @attraction} %>
+
+<div id="form">
+  <%= render partial: 'edit_attraction', locals: {attraction: @attraction} %>
+</div>

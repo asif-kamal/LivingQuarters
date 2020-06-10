@@ -1,0 +1,19 @@
+<p style="text-align:center;"><%= link_to "Add New Attraction", new_attraction_path %>
+</p>
+<br>
+<% attractions.each do |attraction| %>
+    <p>
+      <%= link_to "#{attraction.name}", attraction_path(attraction) %>
+      <br>
+      <br>
+      <%= attraction.description %>
+      <br>
+      <span style="font-size:14px;">Enjoyment Rating: <%= attraction.assignments.average(:rating) %></span>
+      <br>
+      <br>
+      <em><%= link_to "#{attraction.location.name}", location_path(attraction.location) %></em>
+      <br>
+      <br>
+    </p>
+  <br>
+<% end %>

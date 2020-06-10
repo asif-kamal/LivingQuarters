@@ -1,0 +1,16 @@
+<%= form_for attraction do |f| %>
+  <br>
+  <br>
+  <em>
+  <%= f.label :description, "Description:" %>
+  </em>
+  <br>
+  <%= f.text_area :description %>
+  <br>
+  <br>
+  <%= f.submit "Update Attraction" %>
+<% end %>
+<br>
+<%= form_for :activity, url: attraction_path, method: :delete, data: {confirm: "Are You Sure You Want to Delete This Attraction?"} do |f| %>
+<%= f.submit "Delete Attraction" %>
+<% end %>

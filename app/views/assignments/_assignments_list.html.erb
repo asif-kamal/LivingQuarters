@@ -1,14 +1,14 @@
-<% if counselor %>
-  <h2>Assignments for <%= counselor.name %></h2>
+<% if host %>
+  <h2>Assignments for <%= host.name %></h2>
   <br>
   <br>
   <% assignments.each do |assignment| %>
     <div class="linkstyle">
-      <h3 style="font-weight:500;"><%= assignment.activity.name %></h3>
+      <h3 style="font-weight:500;"><%= assignment.attraction.name %></h3>
       </div>
       <p>
       <strong>
-        <%= assignment.activity.description %>
+        <%= assignment.attraction.description %>
       </strong>
       <br>
       <br>
@@ -23,7 +23,7 @@
           <%= f.radio_button :rating, '5' %> 5
         <% end %>
       <% else %>
-        <em>Fun Rating: <%= assignment.rating %></em>
+        <em>Enjoyment Rating: <%= assignment.rating %></em>
       <% end %>
       <br>
       <br>
@@ -34,22 +34,22 @@
   <h2>Available Assignments</h2>
   <br>
   <br>
-  <% camps.each do |camp| %>
+  <% locations.each do |location| %>
     <br>
-    <h3 style="font-weight:500;"><%= camp.name %></h3>
+    <h3 style="font-weight:500;"><%= location.name %></h3>
     <br>
-    <% camp.assignments.each do |assignment| %>
+    <% location.assignments.each do |assignment| %>
       <% if assignment.filled==false %>
         <div class="linkstyle">
-        <%= assignment.activity.name %>
+        <%= assignment.attraction.name %>
         </div>
         <p>
-          <%= assignment.activity.description %>
+          <%= assignment.attraction.description %>
           <br>
           <em>
           <%= form_for assignment do |f| %>
-          <%= f.hidden_field :camp_counselor_id, :value => current_user.id %>
-          <%= f.hidden_field :activity_id, :value => assignment.activity.id %>
+          <%= f.hidden_field :host_id, :value => current_user.id %>
+          <%= f.hidden_field :attraction_id, :value => assignment.attraction.id %>
           <%= f.hidden_field :filled, :value => true %>
           <%= f.submit "Take this Assignment" %>
           <% end %>

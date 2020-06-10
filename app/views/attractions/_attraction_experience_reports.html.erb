@@ -1,0 +1,20 @@
+What others have to say about <%= attraction.name %>:
+<br>
+<br>
+<br>
+<div style="text-align:center; color:grey">
+  <% experience_reports.each do |experience_report| %>
+    <strong><%= experience_report.title %></strong>
+    <br>
+    <em>"<%= experience_report.content %>"</em>
+    <br>
+    <% if experience_report.host_id %>
+    <em style="font-size:12px; color:black">
+    posted by: <%= Host.find_by(id: experience_report.host_id).name %>
+    </em>
+    <br>
+    <% end %>
+    <br>
+    <br>
+  <% end %>
+</div>

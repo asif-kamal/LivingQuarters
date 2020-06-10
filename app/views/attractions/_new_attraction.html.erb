@@ -1,0 +1,17 @@
+<%= form_for attraction do |f| %>
+  <%= f.label :name, "Attraction Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <% if @location %>
+    <%= f.hidden_field :location_id, value: @location.id %>
+  <% else %>
+    <%= f.label :location_id, "Location name:" %><br>
+    <%= f.collection_select :location_id, Location.all, :id, :name, :include_blank => "Please select" %>
+    <br>
+  <% end %>
+  <%= f.label :description, "Description" %>
+  <br>
+  <%= f.text_area :description, size: "50x10" %>
+  <br>
+  <%= f.submit "Create Attraction" %>
+<% end %>

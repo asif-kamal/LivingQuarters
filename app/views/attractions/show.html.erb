@@ -1,0 +1,42 @@
+<h3 style="text-align:center; font-weight:400;"><%= @attraction.location.name %></h3>
+<h2><%= @attraction.name %></h2>
+
+<div style="text-align:center">
+  <%= attraction_edit_link %>
+</div>
+<br>
+<br>
+<h3><%= @attraction.description %></h3>
+<p>
+  Enjoyment Rating: <%= @activity.assignments.average(:rating) %>
+  <br>
+</p>
+Availability:
+<br>
+<%= render partial: 'attraction_availability', locals: {assignments: @assignments} %>
+<br>
+<br>
+Hosts that are signed up for this attraction:
+<br>
+<% @attraction.hosts.uniq.each do |host| %>
+  <em><%= host.name %></em>
+  <br>
+<% end %>
+<br>
+<br>
+<br>
+<%= render partial: 'attraction_experience_reports', locals: {attraction: @attraction, experience_reports: @experience_report} %>
+<br>
+<br>
+<br>
+Share your Experience about <%= @attraction.name %>:
+<br>
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+<br>
+<div id="form">
+  <%= render :partial => 'experience_reports/form', locals: {attraction: @attraction} %>
+</div>
+<br>
+<br>

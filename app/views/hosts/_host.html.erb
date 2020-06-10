@@ -1,0 +1,51 @@
+<h3><%= host.name %></h3>
+
+<p>
+  Email: <%= host.email %>
+  <br>
+  Age: <%= host.age %>
+  <br>
+  <br>
+  <br>
+  <% if host.admin %>
+  <em><%= "You have a Location Admin account" %></em>
+  <% end %>
+  <br>
+  <%= link_to "Edit Your Profile", edit_host_path(:current_user) %>
+  <br>
+  <br>
+  <br>
+  <br>
+  Here are the attractions you signed up for:
+  <br>
+  <% if host.attractions %>
+    <% host.attractions.each do |attraction| %>
+      <br>
+      <strong><em><%= attraction.name %></em></strong>
+      <br>
+      <%= location_name(attraction) %>
+      <br>
+      <%= attraction.description %>
+      <br>
+    <% end %>
+  <% else %>
+    You have not signed up for any attractions yet...
+  <% end %>
+  <br>
+  <%= link_to "View All Your Assignments", host_assignments_path(host) %>
+  <br>
+  <br>
+  <br>
+  <br>
+  Loctions you are associated with:
+  <br>
+  <% host.locations.uniq.each do |location| %>
+    <br>
+    <strong><em><%= location.name %></em></strong>
+    <br>
+    <%= location.location %>
+    <br>
+  <% end %>
+</p>
+<br>
+<br>
