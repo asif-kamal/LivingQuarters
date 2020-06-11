@@ -1,6 +1,6 @@
 class HostsController < ApplicationController
   skip_before_action :require_log_in, only: [:new, :create]
-  before_action :set_counselor, only: [:show, :edit, :update, :destroy]
+  before_action :set_host, only: [:show, :edit, :update, :destroy]
   include HostsHelper
 
   def new
@@ -8,7 +8,7 @@ class HostsController < ApplicationController
   end
 
   def create
-    @host = Host.create(counselor_params)
+    @host = Host.create(host_params)
     if @host.save
       session[:user_id] = @host.id
       redirect_to host_path(@host)
@@ -44,6 +44,6 @@ class HostsController < ApplicationController
   end
 
   def host_params
-    params.require(:host_counselor).permit(:name, :email, :age, :admin, :uid, :provider, :password)
+    params.require(:host).permit(:name, :email, :origin, :admin, :uid, :provider, :password)
   end
 end

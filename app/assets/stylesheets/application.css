@@ -48,8 +48,8 @@
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-   	background: #b0e1f0;
-   	color: #404040;
+   	background: #808000;
+   	color: #000000;
    	min-width: 230px;
    	max-width: auto;
    	margin: 0 auto;
@@ -195,7 +195,7 @@
  }
 
  .todoapp {
- 	margin: 50px 0 40px 0;
+ 	margin: 100px 0 40px 0;
  	position: relative;
  	min-width: 230px;
  	max-width: 700px;

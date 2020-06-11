@@ -1,0 +1,14 @@
+<%= form_for :experience_report, url: experience_reports_path, method: :post do |f| %>
+  <%= f.label :title, "Title" %>
+  <br>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.hidden_field :attraction_id, value: @attraction.id %>
+  <%= f.hidden_field :host_id, value: current_user.id %>
+
+  <%= f.label :content, "Experience Reports" %>
+  <br>
+  <%= f.text_area :content, size: "50x10" %>
+  <br>
+  <%= f.submit "Submit Experience Report" %>
+<% end %>

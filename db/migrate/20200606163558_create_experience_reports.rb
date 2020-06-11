@@ -4,7 +4,7 @@ class CreateExperienceReports < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.belongs_to :host
-      t.belongs_to :location
+      t.belongs_to :attraction
 
       t.timestamps null: false
     end

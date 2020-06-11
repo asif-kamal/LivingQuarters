@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 2020_06_06_232204) do
     t.string "title"
     t.text "content"
     t.integer "host_id"
-    t.integer "location_id"
+    t.integer "attraction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["attraction_id"], name: "index_experience_reports_on_attraction_id"
     t.index ["host_id"], name: "index_experience_reports_on_host_id"
-    t.index ["location_id"], name: "index_experience_reports_on_location_id"
   end
 
   create_table "hosts", force: :cascade do |t|

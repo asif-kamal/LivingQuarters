@@ -1,5 +1,5 @@
-<%= form_for camp do |f| %>
-  <%= f.label :name, "Camp Name" %>
+<%= form_for location do |f| %>
+  <%= f.label :name, "Location Name" %>
   <br>
   <%= f.text_field :name %>
   <br>
@@ -14,5 +14,5 @@
   <%= f.text_area :description, size: "50x10" %>
   <br>
   <br>
-  <%= f.submit "Add Camp" %>
+  <%= f.submit "Add Location" %>
 <% end %>

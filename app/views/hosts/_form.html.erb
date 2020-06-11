@@ -5,8 +5,8 @@
   <%= f.label :email %>
   <%= f.text_field :email %>
   <br>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
+  <%= f.label :origin %>
+  <%= f.text_field :origin %>
   <br>
   <br>
   <%= f.label(:admin, "Location Admin") %><br>
@@ -16,6 +16,6 @@
   <%= f.submit %>
 <% end %>
 <br>
-<%= form_for :location_host, url: location_host_path, method: :delete, data: {confirm: "Are You Sure You Want to Delete Your Account?"} do |f| %>
+<%= form_for :host, url: host_path, method: :delete, data: {confirm: "Are You Sure You Want to Delete Your Account?"} do |f| %>
 <%= f.submit "Delete Account" %>
 <% end %>

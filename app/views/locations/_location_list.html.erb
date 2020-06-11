@@ -1,0 +1,14 @@
+<% locations.each do |location| %>
+  <h3 style="font-weight:500;"><%= location.location %></h3>
+    <p>
+    <strong>
+      <%= link_to location.name, location_path(location) %>
+    </strong>
+    <br>
+    <br>
+    <%= location.description %>
+    <br>
+    <br>
+    <br>
+    </p>
+<% end %>

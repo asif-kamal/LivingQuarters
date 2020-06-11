@@ -29,7 +29,7 @@ class AttractionsController < ApplicationController
   end
 
   def update
-    if @attraction.update(activity_params)
+    if @attraction.update(attraction_params)
       redirect_to @attraction
     else
       render :edit
@@ -49,11 +49,11 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:activity).permit(:name, :description, :location_id)
+    params.require(:attraction).permit(:name, :description, :location_id)
   end
 
   def create_logic
-    @attraction = Attraction.create(activity_params)
+    @attraction = Attraction.create(attraction_params)
     if @attraction.save
       2.times do
         @attraction.assignments.create(:attraction_id => @attraction.id, :location_id => @attraction.location_id, :filled => false, :rating => 0)
@@ -63,7 +63,5 @@ class AttractionsController < ApplicationController
       render :new
     end
   end
-
-      redirect_to attraction_path(@attraction)
 
   end
