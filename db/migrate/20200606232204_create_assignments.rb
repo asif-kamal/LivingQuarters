@@ -7,6 +7,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
       t.belongs_to :host, index: true, foreign_key: true
       t.belongs_to :attraction, index: true, foreign_key: true
       t.belongs_to :location, index: true, foreign_key: true
+
       t.timestamps null: false
     end
   end

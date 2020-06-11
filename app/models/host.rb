@@ -11,7 +11,7 @@ class Host < ApplicationRecord
 
   has_many :locations, through: :assignments
 
-  has_many :attractions, through: :locations
+  
 
 
 

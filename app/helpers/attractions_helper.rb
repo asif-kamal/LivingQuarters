@@ -1,5 +1,5 @@
 module AttractionsHelper
-  def activity_delete_link
+  def attraction_delete_link
     if current_user.admin
        link_to "Delete Attraction", @attraction, method: :delete, data: { confirm: "Delete This Attraction?" }
     end
@@ -12,8 +12,8 @@ module AttractionsHelper
   end
 
   def attraction_index_header
-    if @attraction
-      "#{@attraction.name} Attraction"
+    if @location
+      "#{@location.name} Attractions"
     else
       "Attractions"
     end

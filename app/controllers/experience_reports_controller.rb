@@ -1,5 +1,5 @@
 class ExperienceReportController < ApplicationController
-include ExperienceReportHelper
+include ExperienceReportsHelper
 
   def new
     @experience_report = ExperienceReport.new

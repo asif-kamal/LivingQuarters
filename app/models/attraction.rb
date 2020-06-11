@@ -6,11 +6,11 @@ class Attraction < ApplicationRecord
 
   has_many :comments
 
-
+  has_many :assignments
+  has_many :hosts, through: :assignments
 
 
   belongs_to :location
-  belongs_to :host
 
   def self.sorted_asc
     order(name: :asc)
