@@ -1,19 +1,19 @@
 class AttractionsController < ApplicationController
-  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :set_attraction, only: [:show, :edit, :update, :destroy]
   include AttractionsHelper
 
   def index
     if params[:location_id]
       @location = Location.find_by(id: params[:location_id]) if params[:location_id]
-      @attractions = @location.activities.sorted_asc
+      @attractions = @location.attractions.sorted_asc
     else
-      @ttractions = Attraction.all.sorted_asc
+      @attractions = Attraction.all.sorted_asc
     end
   end
 
   def show
-    @assignments = @attractions.assignments.order_by_filled
-    @experience_reports = @attractions.experience_reports
+    @assignments = @attraction.assignments.order_by_filled
+    @experience_reports = @attraction.experience_reports
   end
 
   def new

@@ -4,7 +4,7 @@ class Attraction < ApplicationRecord
 
   validates_presence_of :description
 
-  has_many :comments
+  has_many :experience_reports
 
   has_many :assignments
   has_many :hosts, through: :assignments

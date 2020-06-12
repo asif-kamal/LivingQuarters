@@ -62,7 +62,7 @@ class AssignmentsController < ApplicationController
     else
       @assignments = Assignment.all
     end
-    @location = Location.all
+    @locations = Location.all
   end
 
 end
