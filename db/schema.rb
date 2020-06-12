@@ -60,14 +60,10 @@ ActiveRecord::Schema.define(version: 2020_06_06_232204) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.string "location"
+    t.string "address"
     t.text "description"
-    t.integer "rating"
-    t.boolean "filled", default: false
-    t.integer "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["host_id"], name: "index_locations_on_host_id"
   end
 
 end

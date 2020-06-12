@@ -11,7 +11,12 @@ class Host < ApplicationRecord
 
   has_many :locations, through: :assignments
 
-  
+  has_many :experience_reports
+  # look into this improvement suggestion from Jennifer (Jenn) Hansen during my rails project assessment:
+  has_many :reported_attractions, through: :experience_reports, source: :attraction
+  # maybe source: :activities
+
+
 
 
 

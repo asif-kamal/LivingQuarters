@@ -64,4 +64,4 @@ class AttractionsController < ApplicationController
     end
   end
 
-  end
+end

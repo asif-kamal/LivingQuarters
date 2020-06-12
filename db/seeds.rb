@@ -11,7 +11,7 @@
 
 DATA = {
   :location_keys =>
-    ["name", "location", "description"],
+    ["name", "address", "description"],
   :locations => [
     ["Secaucus Living", "Downtown Toronto", "Clean air for the Living. Come experience a freer life..."],
     ["Hatchback Moven", "Australian Outback", "Forget the angst of modern civilization. Live for a moment outside of yourself."],
@@ -52,19 +52,19 @@ DATA = {
   :experience_report_keys =>
    ["title", "content", "host_id", "attraction_id"],
   :experience_reports => [
-    ["Awesome!", "Cupcake ipsum dolor sit amet candy canes jelly beans. Cotton candy tootsie roll cheesecake sesame snaps ice cream jelly sesame snaps. Jujubes gummies apple pie jelly beans jujubes donut soufflé.", 1, 13],
-    ["So cool...", "Cupcake ipsum dolor sit. Amet chupa chups muffin apple pie sweet pudding candy canes gingerbread. Sweet roll chocolate apple pie toffee gingerbread.", 2, 12],
-    ["Supreme!", "Cupcake ipsum dolor sit. Amet candy canes lemon drops chupa chups caramels caramels soufflé. Sweet cheesecake cupcake. Soufflé chupa chups wafer bear claw biscuit dragée marzipan.", 3, 11],
-    ["Om.", "Cupcake ipsum dolor sit amet lollipop soufflé muffin. Icing chocolate cake bear claw. Carrot cake powder bear claw marzipan cake jelly beans cotton candy lollipop candy. Candy canes chocolate cake cotton candy cookie gummi bears caramels brownie croissant.", 4, 10],
-    ["Amazing", "Cupcake ipsum dolor sit amet pastry danish carrot cake. Cake pudding donut toffee muffin jelly. Liquorice gummies sweet carrot cake tart sesame snaps powder pie", 5, 9],
-    ["Great Time!", "Cupcake ipsum dolor sit. Amet jelly beans donut biscuit cake bear claw pudding cookie. Gingerbread jelly-o jelly candy marshmallow croissant lollipop pudding!", 6, 8],
-    ["Super Cool", "Cupcake ipsum dolor. Sit amet cotton candy fruitcake. Apple pie oat cake halvah halvah muffin candy canes muffin icing. Brownie bonbon soufflé jelly-o caramels wafer bear claw tart sweet roll.", 7, 7],
-    [":)", "Cupcake ipsum dolor sit amet chupa chups chocolate cake. Soufflé dessert gummies. Pie tart wafer oat cake!", 8, 6],
-    ["Namaste.", "Cupcake ipsum dolor sit amet toffee bear claw topping. Cotton candy tiramisu halvah topping donut soufflé. Halvah oat cake jelly chocolate cake brownie!", 9, 5],
-    ["------ -", "Cupcake ipsum dolor sit. Amet pastry carrot cake fruitcake. Muffin bonbon cake caramels jujubes tootsie roll chocolate cake. Sugar plum jujubes toffee tiramisu macaroon apple pie lollipop biscuit candy canes!", 1, 4],
-    ["Awesome Activity", "Cupcake ipsum dolor sit. Amet biscuit powder jelly beans. Chupa chups halvah chocolate tootsie roll lemon drops pastry jujubes. Pudding pastry marshmallow cotton candy topping oat cake cheesecake!", 2, 3],
-    ["Really Neat", "Cupcake ipsum dolor sit amet wafer tiramisu sweet jelly. Chocolate cake toffee chocolate bar croissant icing toffee candy candy canes. Cheesecake ice cream marzipan chupa chups marzipan wafer macaroon!", 3, 2],
-    ["Super Super!!", "Cupcake ipsum dolor sit. Amet chupa chups candy canes lemon drops caramels dragée sweet powder. Chocolate bar jelly tiramisu gingerbread danish jelly-o. Gummi bears cheesecake dessert!", 4, 1]
+    ["Felt like I was back in my childhood days :)", "Refreshed.", 1, 13],
+    ["Enjoyed spendgin time in something I feel attuned to.", "Would love to come back!", 2, 12],
+    ["Fresh and alive once again!", "I have met people here with whom I've really shared a connection with.", 3, 11],
+    ["Om.", "The clarity of my Seeing has brought to a place I thought I had lost forever...", 4, 10],
+    ["----", "Silence.", 5, 9],
+    ["Highly Recommend this place!", "If you want to leave aside fruitless endeavors for good.", 6, 8],
+    ["Thank you.", "Much love to the team who made this possible.", 7, 7],
+    ["Best people I have had the chance to spend time with.", "Come here if you are seeking freedom.", 8, 6],
+    ["Namaste.", "Yippee!", 9, 5],
+    ["------ -", "! ! !", 1, 4],
+    ["Happy.", "Slow down.", 2, 3],
+    ["Yup.", "No worries.", 3, 2],
+    ["Be Still", "Excellent climate.", 4, 1]
   ]
 }
 
