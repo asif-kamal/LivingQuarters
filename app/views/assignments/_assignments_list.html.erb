@@ -21,12 +21,12 @@
           <%= f.radio_button :rating, '3' %>
           <%= f.radio_button :rating, '4' %>
           <%= f.radio_button :rating, '5' %> 5
-        
+
         <% end %>
       <% else %>
         <em>Enjoyment Rating: <%= assignment.rating %></em>
         <br>
-        <em>Day of Assignment(which may alter program): <%= assignment.day %></em>
+
       <% end %>
       <br>
       <br>
@@ -49,7 +49,7 @@
         </div>
         <p>
           <%= assignment.attraction.description %>
-          <%= assignment.day %>
+          
           <br>
           <em>
           <%= form_for assignment do |f| %>

@@ -10,6 +10,8 @@
       <br>
       <span style="font-size:14px;">Enjoyment Rating: <%= attraction.assignments.average(:rating) %></span>
       <br>
+      <em>Day of the week of when Attraction will be held(which may alter program): <%= attraction.day %></em>
+      <br>
       <br>
       <em><%= link_to "#{attraction.location.name}", location_path(attraction.location) %></em>
       <br>
