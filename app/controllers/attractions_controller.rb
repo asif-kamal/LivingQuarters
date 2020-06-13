@@ -2,6 +2,7 @@ class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
   include AttractionsHelper
 
+
   def index
     if params[:location_id]
       @location = Location.find_by(id: params[:location_id]) if params[:location_id]
@@ -10,6 +11,11 @@ class AttractionsController < ApplicationController
       @attractions = Attraction.all.sorted_asc
     end
   end
+
+  def day_select
+      @display_day = params[:day]
+      @day = Attraction.day_of_the_week(@display_day)
+    end
 
   def show
     @assignments = @attraction.assignments.order_by_filled
@@ -49,7 +55,11 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:attraction).permit(:name, :description, :location_id)
+    params.require(:attraction).permit(:name, :description, :location_id, :day)
+  end
+
+  def day_param
+    params.permit(:day)
   end
 
   def create_logic
@@ -63,5 +73,4 @@ class AttractionsController < ApplicationController
       render :new
     end
   end
-
 end

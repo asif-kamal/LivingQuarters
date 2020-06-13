@@ -6,6 +6,8 @@ class AssignmentsController < ApplicationController
     set_index_variables
   end
 
+
+
   def show
     @attraction = @assignment.attraction
   end
@@ -53,6 +55,7 @@ class AssignmentsController < ApplicationController
   def assignment_params
     params.require(:assignment).permit(:name, :filled, :rating, :host_id, :attraction_id, :location_id)
   end
+
 
 
   def set_index_variables

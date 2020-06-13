@@ -1,4 +1,7 @@
 class Attraction < ApplicationRecord
+
+  scope :day_of_the_week, ->(day) { where(day: day) }
+  
   validates_presence_of :name
   validates_uniqueness_of :name
 

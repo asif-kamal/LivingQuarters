@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :assignments
 
   resources :hosts do
-    resources :assignments, only: [:show, :index]
+    resources :assignments, only: [:show, :index, ]
     resources :experience_reports, shallow: true
   end
 

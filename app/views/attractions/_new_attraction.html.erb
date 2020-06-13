@@ -2,6 +2,9 @@
   <%= f.label :name, "Attraction Name" %>
   <%= f.text_field :name %>
   <br>
+  <%= f.label :day %>
+  <%= f.text_field :day %>
+  <br>
   <% if @location %>
     <%= f.hidden_field :location_id, value: @location.id %>
   <% else %>
