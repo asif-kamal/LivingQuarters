@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_06_232204) do
     t.string "name"
     t.text "description"
     t.string "day"
+    t.string "search"
     t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

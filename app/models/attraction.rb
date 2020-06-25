@@ -1,7 +1,7 @@
 class Attraction < ApplicationRecord
 
   scope :day_of_the_week, ->(day) { where(day: day) }
-  
+
   validates_presence_of :name
   validates_uniqueness_of :name
 
@@ -19,4 +19,11 @@ class Attraction < ApplicationRecord
     order(name: :asc)
   end
 
+  def self.search(search)
+    if search
+      self.where("name = ?", search)
+    else
+      Attraction.all
+  end
+end
 end

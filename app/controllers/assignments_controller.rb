@@ -17,7 +17,7 @@ class AssignmentsController < ApplicationController
   end
 
   def create
-    @assignment = Assignment.create(assignment_params)
+    @assignment = Assignment.new(assignment_params)
     if @assignment.save!
       redirect_to assignments_path(@assignment)
     else

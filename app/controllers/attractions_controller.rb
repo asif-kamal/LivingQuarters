@@ -4,7 +4,9 @@ class AttractionsController < ApplicationController
 
 
   def index
-    if params[:location_id]
+    if params[:search]
+      @attractions = Attraction.search(params[:search])
+    elsif params[:location_id]
       @location = Location.find_by(id: params[:location_id]) if params[:location_id]
       @attractions = @location.attractions.sorted_asc
     else
@@ -26,6 +28,7 @@ class AttractionsController < ApplicationController
     @location = Location.find_by(id: params[:location_id]) if params[:location_id]
     @attraction = Attraction.new
   end
+
 
   def create
     create_logic
@@ -55,7 +58,7 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:attraction).permit(:name, :description, :location_id, :day)
+    params.require(:attraction).permit(:name, :description, :location_id, :day, :search)
   end
 
   def day_param

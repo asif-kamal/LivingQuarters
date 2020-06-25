@@ -6,7 +6,7 @@ include ExperienceReportsHelper
   end
 
   def create
-    @experience_report = ExperienceReport.create(comment_params)
+    @experience_report = ExperienceReport.create(experience_report_params)
     if @experience_report.save
       redirect_to attraction_path(@experience_report.attraction_id)
     else

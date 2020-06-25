@@ -4,6 +4,7 @@ class CreateAttractions < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.string :day
+      t.string :search
       t.belongs_to :location, index: true, foreign_key: true
 
       t.timestamps null: false
