@@ -21,7 +21,7 @@ class Attraction < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where("name = ?", search)
+      self.where("lower(name) = ?", search)
     else
       Attraction.all
   end
