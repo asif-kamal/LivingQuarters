@@ -66,11 +66,10 @@ class AttractionsController < ApplicationController
   end
 
   def create_logic
-    @attraction = Attraction.create(attraction_params)
+    @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      2.times do
         @attraction.assignments.create(:attraction_id => @attraction.id, :location_id => @attraction.location_id, :filled => false, :rating => 0)
-      end
+  
       redirect_to attraction_path(@attraction)
     else
       render :new
